@@ -1,1 +1,21 @@
-.pio
+.DS_Store
+
+# Visual Studio project configurations
+.vscode/*
+/.vs
+
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Compilation output
+/out
+bin/
+build/
+.idea/
+CMakeSettings.json
+
+# Local Build Test
+main.cpp
+
+# PlatformIO
+.pio/
