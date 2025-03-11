@@ -5,7 +5,7 @@ class TamanduContext {
  public:
   explicit TamanduContext(int id) : id(id) {}
 
-  auto getId() const -> int { return id; }
+  int getId() const { return id; }
 
  private:
   int id;
