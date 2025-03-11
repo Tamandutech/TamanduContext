@@ -1,14 +1,14 @@
-#ifndef TAMANDU_CONTEXT_H
-#define TAMANDU_CONTEXT_H
+#ifndef TAMANDU_CONTEXT_HPP
+#define TAMANDU_CONTEXT_HPP
 
 class TamanduContext {
-public:
-  TamanduContext(int id) : id(id) {}
+ public:
+  explicit TamanduContext(int id) : id(id) {}
 
-  int getId() const { return id; }
+  auto getId() const -> int { return id; }
 
-private:
+ private:
   int id;
 };
 
-#endif // TAMANDU_CONTEXT_H
+#endif  // TAMANDU_CONTEXT_HPP
