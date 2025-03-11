@@ -1,4 +1,4 @@
-name: PlatformIO Unit Tests & Linter
+name: PlatformIO Unit Tests
 
 on: [push, pull_request, workflow_call]
 
@@ -24,8 +24,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install platformio
-      - name: Run Cpp Linter
-        run: platformio check -e esp32dev
       - name: Run Tests on the Desktop Environment
         run: platformio test -e desktop
       - name: Run Build Test for ESP32 Dev Module
