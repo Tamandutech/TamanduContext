@@ -21,7 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install platformio
       - name: Build Compilation Database
-        run: platformio run --target compiledb
+        run: platformio run -e esp32dev --target compiledb
       - uses: cpp-linter/cpp-linter-action@main
         id: linter
         continue-on-error: true
@@ -29,7 +29,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # style: file
-          tidy-checks: '-database=compile_commands.json'
+          tidy-checks: ''
+          database: compile_commands.json
           files-changed-only: true
           thread-comments: ${{ github.event_name == 'pull_request' && 'update' }}
 
