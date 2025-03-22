@@ -9,7 +9,6 @@
 [![Contributors](https://img.shields.io/github/contributors-anon/Tamandutech/TamanduContext)](https://github.com/Tamandutech/TamanduContext/graphs/contributors)
 [![Top Language](https://img.shields.io/github/languages/top/Tamandutech/TamanduContext)](https://github.com/Tamandutech/TamanduContext)
 
-
 ## Description
 
 Manage data shared by parallel processes in your embedded device.
@@ -33,17 +32,17 @@ The library comes with a set of automated tests. Contributions should include te
 To run the tests on all configured environments, run:
 
 ```bash
-$ pio test
+pio test
 ```
 
 To test the library on a desktop machine, use the `desktop` environment:
 
 ```bash
-$ pio test -e desktop
+pio test -e desktop
 ```
 
 If you wish to test the library on a specific board, configure the environment in `platformio.ini` and run the tests:
 
 ```bash
-$ pio test -e <environment>
+pio test -e <environment>
 ```
