@@ -35,32 +35,14 @@ protected:
 
 private:
   std::atomic<T> *data;
-  std::atomic<uint32_t> time_last_change; // Tempo de execução em que o dado foi
-                                          // alterado pela última vez
-  std::atomic<uint32_t>
-      stream_interval; // Intervalo que o stream do atributo será feito
-  std::atomic<uint32_t>
-      stream_time;     // momento em que o stream do atributo deve ser feito
 };
 
 template <class T> Context<T>::Context(std::string name) {
-  this->dataStorage = dataStorage->getInstance();
-  this->dataManager = dataManager->getInstance();
-
   this->data = new std::atomic<T>();
-  this->time_last_change.store(0, std::memory_order_release);
-  this->stream_interval.store(0, std::memory_order_release);
-  this->stream_time.store(0, std::memory_order_release);
 }
 
 template <class T> Context<T>::Context(std::string name, T value) {
-  this->dataStorage = dataStorage->getInstance();
-  this->dataManager = dataManager->getInstance();
-
   this->data = new std::atomic<T>(value);
-  this->time_last_change.store(0, std::memory_order_release);
-  this->stream_interval.store(0, std::memory_order_release);
-  this->stream_time.store(0, std::memory_order_release);
 }
 
 template <class T> Context<T>::~Context() { delete this->data; }
