@@ -6,7 +6,5 @@
         "pkief.material-icon-theme",
         "platformio.platformio-ide",
         "vivaxy.vscode-conventional-commits"
-    ],
-    "unwantedRecommendations": [
     ]
 }
