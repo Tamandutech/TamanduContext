@@ -12,20 +12,17 @@ namespace Tamandu {
 
 template <class T> class Context {
 public:
-  Context(std::string name);
-  Context(std::string name, T value);
+  Context();
+  Context(T value);
   virtual ~Context();
 
   T get();
   void set(T data);
   void set(std::string data);
 
-  std::string getName();
   std::string getString(std::string ctrl);
 
 protected:
-  std::string name;
-
   std::string demangle(const char *mangled) {
     int status;
     std::unique_ptr<char[], void (*)(void *)> result(
@@ -37,17 +34,13 @@ private:
   std::atomic<T> *data;
 };
 
-template <class T> Context<T>::Context(std::string name) : name(name) {
-  this->data = new std::atomic<T>();
-}
+template <class T> Context<T>::Context() { this->data = new std::atomic<T>(); }
 
-template <class T> Context<T>::Context(std::string name, T value) : name(name) {
+template <class T> Context<T>::Context(T value) {
   this->data = new std::atomic<T>(value);
 }
 
 template <class T> Context<T>::~Context() { delete this->data; }
-
-template <class T> std::string Context<T>::getName() { return this->name; }
 
 template <class T> T Context<T>::get() {
   return this->data->load(std::memory_order_acquire);
