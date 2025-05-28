@@ -49,10 +49,6 @@
     "cinttypes": "cpp",
     "typeinfo": "cpp"
   },
-  "conventionalCommits.scopes": [
-    "readme",
-    "library_metadata"
-  ],
   "editor.tabSize": 2,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -62,5 +58,5 @@
   "C_Cpp.formatting": "clangFormat",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
+  }
 }
