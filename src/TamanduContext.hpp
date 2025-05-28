@@ -37,11 +37,11 @@ private:
   std::atomic<T> *data;
 };
 
-template <class T> Context<T>::Context(std::string name) {
+template <class T> Context<T>::Context(std::string name) : name(name) {
   this->data = new std::atomic<T>();
 }
 
-template <class T> Context<T>::Context(std::string name, T value) {
+template <class T> Context<T>::Context(std::string name, T value) : name(name) {
   this->data = new std::atomic<T>(value);
 }
 
