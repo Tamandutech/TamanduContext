@@ -1,12 +1,14 @@
 // Include lib:
-#include <Arduino.h>
 #include "TamanduContext.hpp"
+#include <Arduino.h>
 
-Tamandu::Context<int> *context = new Tamandu::Context<int>("test");
+Tamandu::Context<int> *context;
 
 void setup() {
   // Initialize serial interface
   Serial.begin(9600);
+
+  context = new Tamandu::Context<int>("test");
 }
 
 void loop() {
